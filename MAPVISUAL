@@ -1,0 +1,32 @@
+11111111111111111111111 #\n
+10000000000000000000001 #\n
+10000000000000000000001 #\n
+10000000000000000000001 #\n
+10000000000000000000001 #\n
+10000000000000000000001 #\n
+10000000000000000000001 #\n
+10000000000000000000001 #\n
+11111111111111111111111 #\n
+
+Checklist
+
+- Surrounded by walls
+// File has to be readable 
+//		(access R_Ok);
+// 1st line has to be always full 1s with \n;
+//		get next line
+// 		while (str[i]) {if (str[i] != 1){poop}}
+//		baseline or width == strlen(str)
+// All other lines have to start and end with 1;
+//		get next line
+//		if (str[0] != 1 && str[strlen] != 1){poop}
+// All lines must have the same nbr of characters (so they line up);
+//		~FOR ALL~ if (strlen != baseline) {poop}
+// Last line must be all 1s
+//		get next line
+//		
+// 		while (str[i]) {if (str[i] != 1){poop}}
+
+
+- Collectibles are catchable
+- Exit is reachable
