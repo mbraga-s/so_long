@@ -6,11 +6,11 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:24 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/12 19:19:18 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:00:30 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "mlx_linux/mlx.h"
+#include "mlx_linux/mlx.h"
 
 int	main(void)
 {
@@ -20,5 +20,5 @@ int	main(void)
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 //	mlx_loop(mlx);
-	return(0);
+	return (0);
 }
