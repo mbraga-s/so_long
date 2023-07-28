@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/04 16:34:11 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/04 17:13:14 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+int	ft_atoi(const char *nptr)
 {
-	int	i;
+	size_t	i;
+	size_t	sign;
+	int		nbr;
 
+	nbr = 0;
 	i = 0;
-	while (maparray[i])
+	sign = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+		i++;
+	if (nptr[i] == 45 || nptr[i] == 43)
 	{
-		free(maparray[i]);
+		if (nptr[i] == 45)
+			sign = -1;
 		i++;
 	}
-	free(maparray);
+	while ((nptr[i] >= 48 && nptr[i] <= 57))
+	{
+		nbr = (10 * nbr) + (nptr[i] - 48);
+		i++;
+	}
+	return (nbr * sign);
 }

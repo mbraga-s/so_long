@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/10/24 16:36:35 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/03 17:28:48 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
+	char	*ptr;
 
-	i = 0;
-	while (maparray[i])
+	ptr = (char *)s;
+	i = ft_strlen(ptr) + 1;
+	while (i--)
 	{
-		free(maparray[i]);
-		i++;
+		if (*(ptr) == (char)c)
+		{
+			return (ptr);
+		}
+		ptr++;
 	}
-	free(maparray);
+	return (0);
 }
+
+/*int	main(void)
+{
+	const char	*ptr;
+	char		*str;
+	int			c;
+
+	c = 'i';
+	ptr = "Isto e muito fixe moco";
+	str = ft_strchr(ptr, c);
+
+	printf("%s", str);
+}
+*/

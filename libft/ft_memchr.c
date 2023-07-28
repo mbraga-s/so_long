@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/10/27 14:16:05 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/03 14:08:10 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (maparray[i])
+	while (n != 0)
 	{
-		free(maparray[i]);
-		i++;
+		if (*(unsigned char *)s == (unsigned char)c)
+			return ((unsigned char *)s);
+		s++;
+		n--;
 	}
-	free(maparray);
+	return (NULL);
 }

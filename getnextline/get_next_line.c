@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/12/26 19:29:41 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/07/26 15:56:51 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "get_next_line.h"
 
-void	map_free(char **maparray)
+char	*get_next_line(int fd)
 {
-	int	i;
+	char		*line;
+	static char	stash[BUFFER_SIZE + 1];
+	int			i;
 
 	i = 0;
-	while (maparray[i])
+	line = 0;
+	stash[BUFFER_SIZE] = '\0';
+	if (BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
 	{
-		free(maparray[i]);
-		i++;
+		while (stash[i])
+			stash[i++] = 0;
+		return (0);
 	}
-	free(maparray);
+	while (stash[0] || read (fd, stash, BUFFER_SIZE) > 0)
+	{
+		line = ft_strjoin_gnl(line, stash);
+		if (ft_clean(stash))
+			break ;
+	}
+	return (line);
 }

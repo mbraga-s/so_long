@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/10/24 15:56:12 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/10/26 19:04:15 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char	*ptr;
 
-	i = 0;
-	while (maparray[i])
+	ptr = s;
+	while (n != 0)
 	{
-		free(maparray[i]);
-		i++;
+		*ptr = c;
+		ptr++;
+		n--;
 	}
-	free(maparray);
+	return (s);
 }

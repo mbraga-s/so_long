@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/21 16:27:40 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/21 16:27:40 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int	i;
-
-	i = 0;
-	while (maparray[i])
-	{
-		free(maparray[i]);
-		i++;
-	}
-	free(maparray);
+	if (!lst || !del)
+		return ;
+	del (lst->content);
+	free (lst);
 }

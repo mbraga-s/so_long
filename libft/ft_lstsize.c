@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/20 16:20:19 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/22 12:13:40 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	while (maparray[i])
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst != NULL)
 	{
-		free(maparray[i]);
-		i++;
+		count++;
+		lst = lst->next;
 	}
-	free(maparray);
+	return (count);
 }

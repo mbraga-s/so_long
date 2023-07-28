@@ -6,15 +6,15 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:50 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/24 16:55:57 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/07/26 16:02:00 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./get_next_line/get_next_line.h"
 # include "./libft/libft.h"
+# include "./getnextline/get_next_line.h"
 # include <fcntl.h>
 
 typedef struct s_map
@@ -24,10 +24,18 @@ typedef struct s_map
 	char		**maparray;
 }					t_map;
 
-void	ft_putstr_fd(char *s, int fd);
+int		checker(t_map map);
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		check_side(t_map map);
 
-size_t	ft_strlen(const char *str);
+int		check_tpbm(t_map map);
+
+int		map_getheight(char *path);
+
+t_map	alloc_map(char *path);
+
+t_map	make_map(char *path);
+
+void	map_free(char **maparray);
 
 #endif

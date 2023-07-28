@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/03 16:46:10 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/03 17:15:27 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	char	*ptr;
+	size_t	i;
 
 	i = 0;
-	while (maparray[i])
+	ptr = (char *)src;
+	if (size > 0)
 	{
-		free(maparray[i]);
-		i++;
+		while ((size - 1) > i && src[i] != '\0')
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	free(maparray);
+	return (ft_strlen(ptr));
 }

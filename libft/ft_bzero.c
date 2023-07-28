@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/10/24 16:01:20 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/10/27 17:02:32 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	char	*ptr;
+	int		i;
 
+	ptr = s;
 	i = 0;
-	while (maparray[i])
+	while (n > 0)
 	{
-		free(maparray[i]);
+		ptr[i] = '\0';
 		i++;
+		n--;
 	}
-	free(maparray);
 }
+
+/*int	main(void)
+{
+	char a[5] = "Hello";
+
+	printf("%s", a);
+	ft_bzero(a, 5);
+	printf("%s", a);
+}
+*/

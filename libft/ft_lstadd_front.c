@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/20 15:59:18 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/22 12:13:19 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
-
-	i = 0;
-	while (maparray[i])
-	{
-		free(maparray[i]);
-		i++;
-	}
-	free(maparray);
+	if (!lst || !new)
+		return ;
+	if (*lst != NULL)
+		new->next = *lst;
+	*lst = new;
 }

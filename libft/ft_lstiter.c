@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/22 12:32:20 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/22 12:38:46 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-
-	i = 0;
-	while (maparray[i])
+	if (!lst)
+		return ;
+	while (lst != NULL)
 	{
-		free(maparray[i]);
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	free(maparray);
 }

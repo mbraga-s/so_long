@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/21 16:42:02 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/22 12:27:14 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*n_node;
 
-	i = 0;
-	while (maparray[i])
+	if (!lst || !*lst)
+		return ;
+	while ((*lst != NULL))
 	{
-		free(maparray[i]);
-		i++;
+		n_node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = n_node;
 	}
-	free(maparray);
 }

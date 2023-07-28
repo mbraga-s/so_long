@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/04 17:30:36 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/04 17:59:29 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	char	*ptr;
+	size_t	len;
 
-	i = 0;
-	while (maparray[i])
-	{
-		free(maparray[i]);
-		i++;
-	}
-	free(maparray);
+	len = ft_strlen(s);
+	ptr = (char *)malloc(len + 1);
+	if (!ptr)
+		return (NULL);
+	ft_memcpy(ptr, s, len + 1);
+	return (ptr);
 }

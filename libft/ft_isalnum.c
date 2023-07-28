@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/10/24 15:23:17 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/10/26 18:28:18 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (maparray[i])
-	{
-		free(maparray[i]);
-		i++;
-	}
-	free(maparray);
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+		return (1);
+	else
+		return (0);
 }

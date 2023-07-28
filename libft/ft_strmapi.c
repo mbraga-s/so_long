@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/08 17:51:54 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/08 18:14:59 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	size_t	i;
+	char	*ptr;
 
 	i = 0;
-	while (maparray[i])
+	ptr = ft_strdup(s);
+	if (!ptr)
+		return (NULL);
+	while (ptr[i])
 	{
-		free(maparray[i]);
+		ptr[i] = f(i, ptr[i]);
 		i++;
 	}
-	free(maparray);
+	return (ptr);
 }

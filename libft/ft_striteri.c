@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/08 18:23:27 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/08 18:27:02 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (maparray[i])
+	while (s[i])
 	{
-		free(maparray[i]);
+		f(i, &s[i]);
 		i++;
 	}
-	free(maparray);
 }

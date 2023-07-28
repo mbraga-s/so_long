@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_utils.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/26 16:02:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/04 15:43:59 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/04 16:31:45 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "libft.h"
 
-void	map_free(char **maparray)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
+	size_t	j;
+	size_t	len;
 
 	i = 0;
-	while (maparray[i])
+	j = ft_strlen(dst);
+	len = j;
+	if (j < (size - 1) && size > 0)
 	{
-		free(maparray[i]);
-		i++;
+		while (src[i] && ((size - 1) > (j + i)))
+		{
+			dst[j + i] = src[i];
+			i++;
+		}
+		dst[j + i] = '\0';
 	}
-	free(maparray);
+	if (size <= len)
+		len = size;
+	return (len + ft_strlen(src));
 }
