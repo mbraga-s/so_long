@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:50 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/28 14:38:47 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/07/31 12:45:17 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_map
 }					t_map;
 
 int		checker(t_map map);
+
+int		check_content(t_map map, char a);
 
 int		check_shape(t_map map);
 

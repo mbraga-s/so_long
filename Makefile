@@ -6,13 +6,13 @@
 #    By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 15:27:59 by mbraga-s          #+#    #+#              #
-#    Updated: 2023/07/26 17:07:40 by mbraga-s         ###   ########.fr        #
+#    Updated: 2023/07/31 11:53:06 by mbraga-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS = map checker ./utils/so_long_utils\
+SRCS = map checker so_long\
 	 ./getnextline/get_next_line ./getnextline/get_next_line_utils \
 
 LIB = $(NAME).a
