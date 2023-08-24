@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:57:44 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/31 12:45:05 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:23:42 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,25 +92,25 @@ int	checker(t_map map)
 	{
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("Map isn't a rectangle.\n", 2);
-		return (0);
+		return (1);
 	}
 	if (!check_side(map) || !check_tpbm(map))
 	{
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("Map isn't surrounded by walls.\n", 2);
-		return (0);
+		return (1);
 	}
 	if (!check_content(map, 'C'))
 	{
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("Map has invalid chars or lacks mandatory ones.\n", 2);
-		return (0);
+		return (1);
 	}
 	if (check_content(map, 'P') != 1 || check_content(map, 'E') != 1)
 	{
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("Map has wrong number of players or exits.\n", 2);
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }

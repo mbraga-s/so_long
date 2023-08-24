@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:50 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/31 12:45:17 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:39:32 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,15 @@ t_map	alloc_map(char *path);
 t_map	make_map(char *path);
 
 void	map_free(char **maparray);
+
+char	**dupmap(t_map map);
+
+int		check_path(t_map map);
+
+void	fill_flood(char **tempmap, int x, int y, int *flag);
+
+void	start_pos(int *x, int *y, t_map map);
+
+int		collect_catch(char **tempmap);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:24 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/31 11:49:10 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:22:52 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,21 @@
 int	main(int argc, char **argv)
 {
 	t_map	map;
+	int		i;
+	char	**temp;
 
+	i = 0;
 	if (argc == 2)
 	{
 		map = make_map(argv[1]);
-		(void) map;
+		temp = dupmap(map);
+		while (i < map.map_height)
+		{
+			printf("%s", temp[i]);
+			i++;
+		}
 		map_free(map.maparray);
+		map_free(temp);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:24:26 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/07/31 11:01:25 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/17 12:23:55 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_map	make_map(char *path)
 		exit(1);
 	}
 	map = alloc_map(path);
-	if (!checker(map))
+	if (checker(map) || check_path(map))
 	{
 		map_free(map.maparray);
 		exit(1);
