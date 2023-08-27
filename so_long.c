@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:24 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/18 16:22:52 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/27 13:17:43 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,32 @@
 	return (0);
 } */
 
+t_all	*all(void)
+{
+	static t_all	all;
+
+	return (&all);
+}
+
 int	main(int argc, char **argv)
 {
-	t_map	map;
 	int		i;
-	char	**temp;
 
 	i = 0;
 	if (argc == 2)
 	{
-		map = make_map(argv[1]);
-		temp = dupmap(map);
-		while (i < map.map_height)
-		{
-			printf("%s", temp[i]);
-			i++;
-		}
-		map_free(map.maparray);
-		map_free(temp);
+		ft_putchar_fd("Error - Invalid number of args.\n", 2);
+		return (0);
 	}
+	(*all()).map = make_map(argv[1]); //check syntax on (*all())
+	(*all()).mlx = mlx_init();
+	if (check_path())
+		return (0);
+	while (i < (*all()).map.map_height)
+	{
+		printf("%s", (*all()).map.maparray[i]);
+		i++;
+	}
+	map_free((*all()).map.maparray);
 	return (0);
 }
