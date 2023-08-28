@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:50 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/27 13:14:50 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/28 15:27:18 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "libft/libft.h"
 # include "getnextline/get_next_line.h"
 # include "minilibx-linux/mlx.h"
+# include <X11/keysym.h>
+# include <X11/X.h>
 # include <fcntl.h>
 
 //structs
@@ -31,11 +33,31 @@ typedef struct s_all
 {
 	t_map		map;
 	void		*mlx;
+	void		*window;
+	void		*floor;
+	void		*wall;
+	void		*ur_corner;
+	void		*ul_corner;
+	void		*lr_corner;
+	void		*ll_corner;
+	void		*side_border;
+	void		*tb_border;
+	void		*collec;
+	void		*door;
+	void		*player_idle;
+	void		*player_u;
+	void		*player_d;
+	void		*player_r;
+	void		*player_l;
+	void		*enemy;
+	int			col_nbr;
+
 }					t_all;
 
 //main
 
 t_all	*all(void);
+void	set_img(t_all *imgs);
 
 //checker
 
