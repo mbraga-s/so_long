@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:57:44 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/17 12:23:42 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/29 14:55:54 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	check_content(t_map map, char a)
 				count++;
 			if (map.maparray[i][j] != '0' && map.maparray[i][j] != '1' && \
 					map.maparray[i][j] != 'P' && map.maparray[i][j] != 'C' && \
-					map.maparray[i][j] != 'E') //missing bonus
+					map.maparray[i][j] != 'E' && map.maparray[i][j] != 'X')
 				return (0);
 			j++;
 		}

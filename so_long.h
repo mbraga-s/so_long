@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:50 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/28 15:27:18 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:29:36 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_all
 {
 	t_map		map;
 	void		*mlx;
-	void		*window;
+	void		*win;
 	void		*floor;
 	void		*wall;
 	void		*ur_corner;
@@ -42,46 +42,56 @@ typedef struct s_all
 	void		*ll_corner;
 	void		*side_border;
 	void		*tb_border;
-	void		*collec;
+	void		*coll;
 	void		*door;
-	void		*player_idle;
+	void		*p_id;
 	void		*player_u;
 	void		*player_d;
 	void		*player_r;
 	void		*player_l;
 	void		*enemy;
 	int			col_nbr;
+	int			steps;
 
 }					t_all;
 
-//main
+typedef struct s_pos
+{
+	int		x;
+	int		y;
+}				t_pos;
+
+//main.c
 
 t_all	*all(void);
+
 void	set_img(t_all *imgs);
 
-//checker
-
-int		checker(t_map map);
-
-int		check_content(t_map map, char a);
-
-int		check_shape(t_map map);
-
-int		check_side(t_map map);
+//checker.c
 
 int		check_tpbm(t_map map);
 
-int		check_path(void);
+int		check_side(t_map map);
+
+int		check_shape(t_map map);
+
+int		check_content(t_map map, char a);
+
+int		checker(t_map map);
+
+//path.c
+
+t_pos	start_pos(char **tempmap);
 
 void	flood_fill(char **tempmap, int x, int y, int *flag);
 
-char	**dupmap(void);
+int		check_path(void);
 
-void	start_pos(int *x, int *y, char **tempmap);
+char	**dupmap(void);
 
 int		collect_catch(char **tempmap);
 
-//map creation
+//map.c
 
 int		map_getheight(char *path);
 
@@ -89,7 +99,27 @@ t_map	alloc_map(char *path);
 
 t_map	make_map(char *path);
 
-//Map free
+//moves.c
+
+int		key_press(int a);
+
+void	move(char **map, int x, int y);
+
+int		check_collision(char **map, int x, int y, char c);
+
+void	sprite(int x, int y);
+
+void	show_steps(void);
+
+//place_tiles.c
+
+void	place_tiles(t_all imgs, char **map);
+
+void	choose_tile(char a, int y, int x, t_all imgs);
+
+//free.c
+
+int		end_game(void);
 
 void	map_free(char **maparray);
 

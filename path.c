@@ -6,18 +6,20 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/27 12:28:43 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:34:36 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./so_long.h"
 
-void	start_pos(int *w, int *h, char **tempmap)
+t_pos	start_pos(char **tempmap)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	t_pos	temp;
 
 	i = 0;
+	temp.x = 0;
 	while (tempmap[i])
 	{
 		j = 0;
@@ -25,14 +27,15 @@ void	start_pos(int *w, int *h, char **tempmap)
 		{
 			if (tempmap[i][j] == 'P')
 			{
-				*h = i;
-				*w = j;
-				return ;
+				temp.y = i;
+				temp.x = j;
+				return (temp);
 			}
 			j++;
 		}
 		i++;
 	}
+	return (temp);
 }
 
 void	flood_fill(char **tempmap, int w, int h, int *flag)
@@ -56,19 +59,16 @@ void	flood_fill(char **tempmap, int w, int h, int *flag)
 
 int	check_path(void)
 {
-	int		w;
-	int		h;
 	int		flag;
 	char	**tempmap;
+	t_pos	coords;
 
 	flag = 1;
-	w = 0;
-	h = 0;
 	tempmap = dupmap();
 	printf("%s", tempmap[0]);
-	start_pos(&w, &h, tempmap);
-	printf("Start (%d,%d)\n\n", h, w);
-	flood_fill(tempmap, w, h, &flag);
+	coords = start_pos(tempmap);
+	printf("Start (%d,%d)\n\n", coords.y, coords.x);
+	flood_fill(tempmap, coords.x, coords.y, &flag);
 	if (flag || collect_catch(tempmap))
 	{
 		ft_putstr_fd("Error\n", 2);

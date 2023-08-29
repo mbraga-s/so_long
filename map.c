@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:24:26 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/27 12:32:36 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:17:47 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,4 @@ t_map	make_map(char *path)
 	}
 	ft_putstr_fd("Valid map, initializing...\n", 1);
 	return (map);
-}
-
-void	map_free(char **maparray)
-{
-	int	i;
-
-	i = 0;
-	while (maparray[i])
-	{
-		free(maparray[i]);
-		i++;
-	}
-	free(maparray);
 }
