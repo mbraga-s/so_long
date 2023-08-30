@@ -87,7 +87,7 @@ void	show_steps(void)
 
 	steps = ft_itoa((*all()).steps);
 	str = ft_strjoin("Steps taken: ", steps);
-	mlx_string_put((*all()).mlx, (*all()).win, 50, 50, 0x0000FF00, str);
+	mlx_string_put((*all()).mlx, (*all()).win, 50, 50, 0x00000000, str);
 	free(steps);
 	free(str);
 }

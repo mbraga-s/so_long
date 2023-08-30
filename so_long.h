@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:50 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/29 15:29:36 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/30 19:24:42 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ typedef struct s_all
 	void		*win;
 	void		*floor;
 	void		*wall;
-	void		*ur_corner;
-	void		*ul_corner;
-	void		*lr_corner;
-	void		*ll_corner;
-	void		*side_border;
-	void		*tb_border;
+	void		*ur_c;
+	void		*ul_c;
+	void		*lr_c;
+	void		*ll_c;
+	void		*l_side;
+	void		*r_side;
+	void		*t_border;
+	void		*b_border;
 	void		*coll;
 	void		*door;
 	void		*p_id;
@@ -61,7 +63,7 @@ typedef struct s_pos
 	int		y;
 }				t_pos;
 
-//main.c
+//so_long.c
 
 t_all	*all(void);
 
@@ -116,6 +118,8 @@ void	show_steps(void);
 void	place_tiles(t_all imgs, char **map);
 
 void	choose_tile(char a, int y, int x, t_all imgs);
+
+void	wall_make(int x, int y, t_all imgs);
 
 //free.c
 

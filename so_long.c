@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:24 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/30 12:30:32 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/30 19:25:16 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,14 @@ void	set_img(t_all *imgs)
 	imgs->player_l = mlx_xpm_file_to_image(imgs->mlx, "imgs/pl_l.xpm", &i, &i);
 	imgs->player_r = mlx_xpm_file_to_image(imgs->mlx, "imgs/pl_r.xpm", &i, &i);
 	imgs->player_u = mlx_xpm_file_to_image(imgs->mlx, "imgs/pl_u.xpm", &i, &i);
+	imgs->ur_c = mlx_xpm_file_to_image(imgs->mlx, "imgs/ur_corner.xpm", &i, &i);
+	imgs->ul_c = mlx_xpm_file_to_image(imgs->mlx, "imgs/ul_corner.xpm", &i, &i);
+	imgs->lr_c = mlx_xpm_file_to_image(imgs->mlx, "imgs/wall.xpm", &i, &i);
+	imgs->ll_c = mlx_xpm_file_to_image(imgs->mlx, "imgs/wall.xpm", &i, &i);
+	imgs->l_side = mlx_xpm_file_to_image(imgs->mlx, "imgs/l_side.xpm", &i, &i);
+	imgs->r_side = mlx_xpm_file_to_image(imgs->mlx, "imgs/r_side.xpm", &i, &i);
+	imgs->t_border = mlx_xpm_file_to_image(imgs->mlx, "imgs/top.xpm", &i, &i);
+	imgs->b_border = mlx_xpm_file_to_image(imgs->mlx, "imgs/wall.xpm", &i, &i);
 	imgs->p_id = imgs->player_d;
 	imgs->enemy = mlx_xpm_file_to_image(imgs->mlx, "imgs/ph_hole.xpm", &i, &i);
 	imgs->col_nbr = check_content((imgs->map), 'C');
