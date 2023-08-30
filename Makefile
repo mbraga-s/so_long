@@ -6,7 +6,7 @@
 #    By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 15:27:59 by mbraga-s          #+#    #+#              #
-#    Updated: 2023/08/30 14:27:39 by mbraga-s         ###   ########.fr        #
+#    Updated: 2023/08/30 23:30:00 by mbraga-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LIBFT_LIB = ./libft/libft.a
 LIBFT_PATH = ./libft
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address
 MILIB = -I /usr/X11/include -g -L /usr/X11/lib -l minilibx -framework OpenGL -framework AppKit
 
 MLX_LIB_DIR = minilibx-linux/

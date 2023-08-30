@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:11:27 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/30 14:28:57 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/30 23:34:35 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ int	end_game(void)
 	mlx_destroy_image((*all()).mlx, (*all()).player_u);
 	mlx_destroy_image((*all()).mlx, (*all()).coll);
 	mlx_destroy_image((*all()).mlx, (*all()).door);
-	/* mlx_destroy_image((*all()).mlx, (*all()).ur_corner);
-	mlx_destroy_image((*all()).mlx, (*all()).ul_corner);
-	mlx_destroy_image((*all()).mlx, (*all()).lr_corner);
-	mlx_destroy_image((*all()).mlx, (*all()).ll_corner);
-	mlx_destroy_image((*all()).mlx, (*all()).side_border);
-	mlx_destroy_image((*all()).mlx, (*all()).tb_border); */
+	mlx_destroy_image((*all()).mlx, (*all()).ur_c);
+	mlx_destroy_image((*all()).mlx, (*all()).ul_c);
+	mlx_destroy_image((*all()).mlx, (*all()).lr_c);
+	mlx_destroy_image((*all()).mlx, (*all()).ll_c);
+	mlx_destroy_image((*all()).mlx, (*all()).l_side);
+	mlx_destroy_image((*all()).mlx, (*all()).r_side);
+	mlx_destroy_image((*all()).mlx, (*all()).t_border);
+	mlx_destroy_image((*all()).mlx, (*all()).b_border);
 	if (check_content((*all()).map, 'X'))
 		mlx_destroy_image((*all()).mlx, (*all()).enemy);
 	map_free(((*all()).map.maparray));
