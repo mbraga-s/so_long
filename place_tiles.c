@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 11:16:22 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/30 12:41:06 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/30 14:22:23 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,23 @@ void	place_tiles(t_all imgs, char **map)
 	int	j;
 
 	i = 0;
-	while (map[i])
+/* 	while (map[i])
 	{
 		j = 0;
-		while (map[i][j] != '\n')
+		while (map[i][j] != '\n' || map[i][j])
 		{
 			choose_tile(map[i][j], i, j, imgs);
 			j++;
+		}
+		i++;
+	} */
+	while (i < (*all()).map.map_height)
+	{
+		j = 0;
+		while (j < (*all()).map.map_width)
+		{
+			choose_tile(map[i][j], i, j, imgs);
+			j++;			
 		}
 		i++;
 	}
@@ -32,7 +42,7 @@ void	place_tiles(t_all imgs, char **map)
 }
 //check if x and y don't need to switch
 
-void	choose_tile(char a, int x, int y, t_all imgs)
+void	choose_tile(char a, int y, int x, t_all imgs)
 {
 	if (a == '1')
 		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.wall, x * 64, y * 64);

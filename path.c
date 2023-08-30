@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/30 12:09:25 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/30 14:31:56 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_pos	start_pos(char **tempmap)
 void	flood_fill(char **tempmap, int w, int h, int *flag)
 {
 	//printf("Flood start at (%d, %d) with %c.\n", h, w, tempmap[h][w]);
-	if (tempmap[h][w] == '1' || tempmap[h][w] == 'V')
+	if (tempmap[h][w] == '1' || tempmap [h][w] == 'X' || tempmap[h][w] == 'V')
 		return ;
 	if (tempmap[h][w] == 'C' || tempmap[h][w] == '0' || tempmap[h][w] == 'P')
 		tempmap[h][w] = 'V';

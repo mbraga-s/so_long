@@ -45,7 +45,7 @@ void	move(char **map, int x, int y)
 		ft_putstr_fd("Santa got hurt... Try again!\n", 1);
 		end_game();
 	}
-	if (!check_collision(map, x, y, 'X') && !check_collision(map, x, y, '!'))
+	if (!check_collision(map, x, y, 'X') && !check_collision(map, x, y, '1'))
 	{
 		if (check_collision(map, x, y, 'C'))
 			(*all()).col_nbr--;
@@ -87,7 +87,7 @@ void	show_steps(void)
 
 	steps = ft_itoa((*all()).steps);
 	str = ft_strjoin("Steps taken: ", steps);
-	mlx_string_put((*all()).mlx, (*all()).win, 50, 50, 0xFFFFFFFF, str);
+	mlx_string_put((*all()).mlx, (*all()).win, 50, 50, 0x0000FF00, str);
 	free(steps);
 	free(str);
 }
