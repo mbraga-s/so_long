@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:36:45 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/29 15:34:36 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:09:25 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_pos	start_pos(char **tempmap)
 
 	i = 0;
 	temp.x = 0;
+	temp.y = 0;
 	while (tempmap[i])
 	{
 		j = 0;
@@ -65,9 +66,8 @@ int	check_path(void)
 
 	flag = 1;
 	tempmap = dupmap();
-	printf("%s", tempmap[0]);
 	coords = start_pos(tempmap);
-	printf("Start (%d,%d)\n\n", coords.y, coords.x);
+	//printf("Start (%d,%d)\n\n", coords.y, coords.x);
 	flood_fill(tempmap, coords.x, coords.y, &flag);
 	if (flag || collect_catch(tempmap))
 	{
