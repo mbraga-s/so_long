@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:28:50 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/30 19:24:42 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:29:03 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ typedef struct s_all
 	void		*ul_c;
 	void		*lr_c;
 	void		*ll_c;
-	void		*l_side;
-	void		*r_side;
-	void		*t_border;
-	void		*b_border;
+	void		*l_si;
+	void		*r_si;
+	void		*t_bo;
+	void		*b_bo;
 	void		*coll;
 	void		*door;
 	void		*p_id;

@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 11:16:22 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/30 19:28:56 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 20:28:56 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	place_tiles(t_all imgs, char **map)
 	}
 	show_steps();
 }
-//check if x and y don't need to switch
 
 void	choose_tile(char a, int y, int x, t_all imgs)
 {
@@ -60,13 +59,13 @@ void	wall_make(int x, int y, t_all imgs)
 			x == ((*all()).map.map_width - 1))
 		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.lr_c, x * 64, y * 64);
 	else if (y == 0)
-		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.t_border, x * 64, y * 64);
+		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.t_bo, x * 64, y * 64);
 	else if (y == ((*all()).map.map_height - 1))
-		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.b_border, x * 64, y * 64);
+		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.b_bo, x * 64, y * 64);
 	else if (x == 0)
-		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.l_side, x * 64, y * 64);
+		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.l_si, x * 64, y * 64);
 	else if (x == ((*all()).map.map_width - 1))
-		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.r_side, x * 64, y * 64);
+		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.r_si, x * 64, y * 64);
 	else
 		mlx_put_image_to_window(imgs.mlx, imgs.win, imgs.wall, x * 64, y * 64);
 }
