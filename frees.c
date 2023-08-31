@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 15:11:27 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/31 20:29:12 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 21:32:45 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int	end_game(void)
 	mlx_destroy_image((*all()).mlx, (*all()).r_si);
 	mlx_destroy_image((*all()).mlx, (*all()).t_bo);
 	mlx_destroy_image((*all()).mlx, (*all()).b_bo);
-	if (check_content((*all()).map, 'X'))
-		mlx_destroy_image((*all()).mlx, (*all()).enemy);
+	mlx_destroy_image((*all()).mlx, (*all()).enemy);
 	map_free(((*all()).map.maparray));
 	mlx_destroy_window((*all()).mlx, (*all()).win);
 	mlx_destroy_display((*all()).mlx);

@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 11:16:22 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/08/31 20:28:56 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/08/31 21:38:33 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	place_tiles(t_all imgs, char **map)
 		while (j < (*all()).map.map_width)
 		{
 			choose_tile(map[i][j], i, j, imgs);
-			j++;		
+			j++;
 		}
 		i++;
 	}
